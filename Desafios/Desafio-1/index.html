@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio - 01</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
     <h1>Missão do Dia: Validação Simples de Formulário</h1>
     <form id="form1">
-        <input type="text" id="name" placeholder="Digite seu nome">
-        <input type="email" id="email" placeholder="Digite seu email">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Nome</label>
+            <input type="text" id="name" placeholder="Fulano dos Anzois Pereira">
+        </div>
         <button type="submit">Enviar</button>
-        <p id="msgError"></p>
+
+        <p class="lead" id="msgError"></p>
     </form>
 
     <script>
@@ -20,7 +28,7 @@
         const fieldName = document.getElementById('name');
         const fieldEmail = document.getElementById('email');
         const mensagem = document.getElementById('msgError');
-
+        
         //Adicionando o evento de escutar o submit do formulário
         form.addEventListener('submit', function(event) {
             if (fieldName.value.trim() === '' || fieldEmail.value.trim() === '') {
@@ -28,10 +36,11 @@
                 mensagem.textContent = 'Preencha todos os campos!';
                 mensagem.style.color = 'red';
             } else {
-            mensagem.innerText = "Fomulário enviado com sucesso!";
-            mensagem.style.color = "green";
+                mensagem.innerText = "Fomulário enviado com sucesso!";
+                mensagem.style.color = "green";
             }
         });
-    </script>
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
