@@ -39,11 +39,11 @@
             if (fieldName.value.trim() === '' || fieldEmail.value.trim() === '') {
                 event.preventDefault(); // Impede o envio do formulário
                 mensagem.textContent = 'Preencha todos os campos!';
-                mensagem.classList.add("alert", "alert-danger");
+                mensagem.classList.add("alert", "alert-danger", "mt-5");
                 mensagem.style.color = 'red';
             } else {
                 mensagem.innerText = "Fomulário enviado com sucesso!";
-                mensagem.classList.add("alert", "alert-success");
+                mensagem.classList.add("alert", "alert-success", "mt-5");
                 mensagem.style.color = "green";
             }
         });
