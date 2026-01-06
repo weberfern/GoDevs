@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio - 01</title>
+</head>
+<body>
+    <h1>Missão do Dia: Validação Simples de Formulário</h1>
+    <form id="form1">
+        <input type="text" id="name" placeholder="Digite seu nome">
+        <input type="email" id="email" placeholder="Digite seu email">
+        <button type="submit">Enviar</button>
+        <p id="msgError"></p>
+    </form>
+
+    <script>
+        //Selecionando os elementos do DOM
+        const form = document.getElementById('form1');
+        const fieldName = document.getElementById('name');
+        const fieldEmail = document.getElementById('email');
+        const mensagem = document.getElementById('msgError');
+
+        //Adicionando o evento de escutar o submit do formulário
+        form.addEventListener('submit', function(event) {
+            if (fieldName.value.trim() === '' || fieldEmail.value.trim() === '') {
+                event.preventDefault(); // Impede o envio do formulário
+                mensagem.textContent = 'Preencha todos os campos!';
+                mensagem.style.color = 'red';
+            } else {
+            mensagem.innerText = "Fomulário enviado com sucesso!";
+            mensagem.style.color = "green";
+            }
+        });
+    </script>
+</body>
+</html>
